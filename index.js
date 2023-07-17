@@ -9,8 +9,8 @@ const notionClient = new Client({ auth: process.env.NOTION_KEY });
 const pokemonArray = [];
 
 async function fetchPokemonData() {
-  const startNumber = 1;
-  const endNumber = 1010;
+  const startNumber = 1; // Starting number of the Pokemon
+  const endNumber = 10; // Ending number of the Pokemon
 
   for (let i = startNumber; i <= endNumber; i++) {
     const pokemonData = await axios
@@ -66,12 +66,15 @@ async function fetchPokemonData() {
           "special-defense": response.data.stats[4].base_stat,
           speed: response.data.stats[5].base_stat,
           sprite: sprite,
-          artwork:
-            response.data.sprites.other["official-artwork"].front_default,
+          artwork: response.data.sprites.other["official-artwork"]
+            .front_default,
           bulbapediaURL: bulbapediaURL,
         };
 
         pokemonArray.push(pokemonObject);
+
+        // Log the fetched Pokémon name
+        console.log(`Fetched ${pokemonObject.name}`);
       })
       .catch((error) => {
         console.log(error);
