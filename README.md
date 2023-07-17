@@ -10,20 +10,16 @@ The Pokémon Data Notion Integration is a script that fetches Pokémon data from
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/pokemon-data-notion-integration.git
-   Install the required dependencies:
-   -axios
-   -@notionhq/client
-   -dotenv
    ```
+   git clone https://github.com/takshakmudgal/Pokedex.git
+   ```
+2. Install the required dependencies:
+   `yarn install dotenv @notionhq/client axios`
 
-   `yarn install`
-
-2. Set up the environment variables:
+3. Set up the environment variables:
    Create a .env file in the project's root directory.
 
-3. Run the script:
+4. Run the script:
    `node index.js`
 
 ## Usage
